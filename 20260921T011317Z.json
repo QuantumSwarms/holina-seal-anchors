@@ -1,0 +1,57 @@
+{
+ "call_count": 21,
+ "created_utc": "20260921T011317Z",
+ "leaf_scheme": "sha256(0x00 || 'holina/seal-anchor/v1|sid|chain_hash|recording_sha256|receipt_sha256|sealed_at')",
+ "leaves": [
+  "65ee695821b317fe6ba896de964ee6c7fcfcef120220d23aee5fea17156b6c99",
+  "8a0be1b7e8bebfd31468561fada2f6192088a13f284c9fa1a532e927d090d65b",
+  "babee51b737642289e9e252bd86349cc67337d6c94516b6343eb2b2dfa6163bb",
+  "03a3c88d671f00d92416ee92e4b32756a345946e6a0c54033b077085324fee13",
+  "1ac47c5bef8b8788921998c01e1b89db23bfa9106271a55332599eba9dbb2d27",
+  "1d083a26c64a147ce74c0ea97e9396eb7f1b9b1f8551ea46832c3e8691c2675d",
+  "f68e1b78ae56cf8d8c0ed3d66d2330f6ae2ed5f507b679f138dcddbc7c409348",
+  "631a40cfe25b0f961bf6cd82aff98ab71c5e9a210a9a28ff6dd7dc3b394a4918",
+  "3ce61c3abc3dec994836b1a376d9b481fec6e0cc97c805de90416377583391f9",
+  "48bd4ff3ac85402d7f1f287301c1f4a738a6a5496aac133b469d3b3be7c07f2b",
+  "171f16ef3908fe050e78d8c886ba36e607ea6ac83de5de5d4516c76ddce5aa3a",
+  "de5e724cdc3e7649fb007ca612dbbcd9e87d01a5f2bcfdfaa9f140a81d631c9c",
+  "d9b8b462a7995fed232da18a4ff5630152142d6f53467c5b26aa7c2cf7dbd3d3",
+  "5bfc0875a33840469fa14ed4e72d1d7500b01aa01b88b9de78199f018eaef377",
+  "78e95ccb60c6762a75479b5eff5be3b6e3e9688a3f53fb06f449f67891e5645c",
+  "13353fc57ad1613a5bdabe1bbafd9cac3a92c72b2296a3b16d25422dfeb91feb",
+  "a214bec7d5742d305b4b13620dc850842e9caa26c24f51dbce2f43706cd848ab",
+  "16a8858756d15ba0110a85007a63e7fa5ba77b1af36c76a8a5743deb30bc78ba",
+  "5b378a3957a2a38f13e80087aa26d6d67aad46138ea3fc9803bf1fc5b8efe1d7",
+  "4902852cfdf0f3bf665b871c310e4f1d4227c55518381090a51214d41a1797e9",
+  "77549088c10f00f92e14f66d9ee5b3f04af3b1b61b0d3103316620536b4662c8"
+ ],
+ "merkle_root": "70d75becd136b19072a3b202f20e9055c778433ecf8c8900b1aaed25e3c560f0",
+ "node_scheme": "sha256(0x01 || left || right); odd node promoted, never duplicated",
+ "redacted": "call identifiers and per-call digests are withheld; leaf hashes are sufficient to verify the root and any inclusion proof",
+ "tokens": [
+  {
+   "bytes": 4642,
+   "file": "20260921T011317Z.freetsa.tsr",
+   "status": 0,
+   "tsa": "freetsa",
+   "url": "https://freetsa.org/tsr"
+  },
+  {
+   "bytes": 6007,
+   "file": "20260921T011317Z.digicert.tsr",
+   "status": 0,
+   "tsa": "digicert",
+   "url": "http://timestamp.digicert.com"
+  },
+  {
+   "bytes": 6636,
+   "file": "20260921T011317Z.sectigo.tsr",
+   "status": 0,
+   "tsa": "sectigo",
+   "url": "http://timestamp.sectigo.com"
+  }
+ ],
+ "v": "holina/seal-anchor/v1",
+ "window_since_ms": 1789862400000,
+ "window_until_ms": 1789953187439
+}
