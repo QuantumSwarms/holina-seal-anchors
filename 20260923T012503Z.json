@@ -1,0 +1,39 @@
+{
+ "call_count": 1,
+ "created_utc": "20260923T012503Z",
+ "leaf_scheme": "sha256(0x00 || 'holina/seal-anchor/v1|sid|chain_hash|recording_sha256|receipt_sha256|sealed_at')",
+ "leaves": [
+  "e9a73402050cbfc2590aa5912dedf4f091424866dd657767dae7da54ca522be9",
+  "68aa0b7c12860e21255237ee492e8aaeaedc3a6dc2f23c372ff22b20f4f0c2d5"
+ ],
+ "merkle_root": "c6aeb4c725128b43588240c7a5e6873a51b10ff5aa569ab664cca96410c48748",
+ "node_scheme": "sha256(0x01 || left || right); odd node promoted, never duplicated",
+ "prev_anchor_root": "bb3ccc5afa2b4e5e001b40fb1c59c1b0528078eca1c46f7e158915979aaf21fb",
+ "redacted": "call identifiers and per-call digests are withheld; leaf hashes are sufficient to verify the root and any inclusion proof",
+ "tokens": [
+  {
+   "bytes": 4642,
+   "file": "20260923T012503Z.freetsa.tsr",
+   "status": 0,
+   "tsa": "freetsa",
+   "url": "https://freetsa.org/tsr"
+  },
+  {
+   "bytes": 6007,
+   "file": "20260923T012503Z.digicert.tsr",
+   "status": 0,
+   "tsa": "digicert",
+   "url": "http://timestamp.digicert.com"
+  },
+  {
+   "bytes": 6635,
+   "file": "20260923T012503Z.sectigo.tsr",
+   "status": 0,
+   "tsa": "sectigo",
+   "url": "http://timestamp.sectigo.com"
+  }
+ ],
+ "v": "holina/seal-anchor/v1",
+ "window_since_ms": 1790101502185,
+ "window_until_ms": 1790126702402
+}
