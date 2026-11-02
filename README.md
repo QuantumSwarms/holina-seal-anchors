@@ -67,6 +67,37 @@ can never be reinterpreted as a node. An odd node at any level is promoted
 unchanged rather than duplicated, which avoids the well-known root-ambiguity
 bug. Recompute the root from `leaves` in order and compare.
 
+The leaves come in a fixed order. Each is `sha256(0x00 || text)`, where the text
+is UTF-8:
+
+1. **The chain leaf** (in every anchor after the first):
+   `holina/seal-anchor/v1|prev|<prev_anchor_root>`, or `...|prev|GENESIS` for the
+   first chained anchor. This is what puts the chain inside the timestamped tree.
+2. **The authority leaf** (in every anchor that names one):
+   `holina/seal-anchor/v1|authority|<alg>|<key_id>|<public_key>`, using the
+   `authority` fields of the same `.json`. It fixes, under the timestamp, which
+   signing key was HOLINA's at that time, so the key cannot be swapped later.
+   `key_id` is the first 8 bytes of `sha256(public key)`, in hex.
+3. **One leaf per call**:
+   `holina/seal-anchor/v1|<call id>|<chain hash>|<recording sha256>|<receipt sha256>|<sealed_at>`.
+   These texts are withheld (see below); only their hashes are published.
+
+## Verify the post-quantum signature
+
+Since 2026-10-31, each anchor has a `<stamp>.mldsa87.sig` file beside it. It holds
+an ML-DSA-87 (FIPS 204) signature over the anchor's `merkle_root`, made by the key
+in that anchor's authority leaf. The RFC-3161 timestamps use classical signatures;
+this one is post-quantum. Anchors written before that date were signed then, so
+their `sealed_at` is later than their timestamp.
+
+The signed message is the ASCII text
+
+    epochcore/pqc-seal/v2|<key_id>|oracle||<sealed_at>|<seq>|<merkle_root>
+
+using `key_id`, `sealed_at` and `seq` from the `.sig` file's `signature`, and the
+root in lowercase hex. Verify `signature` (base64) against that message with the
+authority's `public_key` (base64) and an empty context string.
+
 ## What is deliberately withheld
 
 Call identifiers and per-call digests are **not** published. Publishing them
@@ -74,3 +105,8 @@ would disclose call volume and timing for HOLINA's customers while adding
 nothing: the leaf hashes are sufficient to verify the root and any inclusion
 proof. What is public is hashes, counts, time windows and the third-party
 tokens.
+
+A business's own dispute packet is different. It proves one of its own calls, and
+it carries that caller's phone number. The sealed record it proves contains the
+number, and a copy with the number removed would no longer match its seal. Nothing
+in this repository carries a phone number.
